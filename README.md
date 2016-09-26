@@ -1,10 +1,10 @@
 HEIG-VD-AMT
 ==========
 
-go to "topology-amt" and run "dockercompose up"
+go to "topology-amt" and run "docker-compose up"
 
 ###Linux / Mac
 
 `cd topology-amt`
 
-`dockercompose up`
+`docker-compose up`
