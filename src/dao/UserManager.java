@@ -49,7 +49,10 @@ public class UserManager
         return users;
     }
 
-
+    /**
+     * @param id
+     * @return the user with this id
+     */
     public User getUser(int id){
         User user = null;
         try{
@@ -125,6 +128,7 @@ public class UserManager
     /**
      * create a user in the database
      * @param user
+     * @return the new user id or -1 if it's fail
      */
     public int creatUser(User user){
         try{
@@ -159,7 +163,7 @@ public class UserManager
     /**
      * Delete the user with this id
      * @param id
-     * @return
+     * @return true if successful
      */
     public boolean deleteUserID(int id){
         try{

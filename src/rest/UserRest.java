@@ -42,6 +42,12 @@ public class UserRest
         return ok(users.stream().map(UserDTO::new).collect(Collectors.toList()), MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * GET method whith the id of the user to get,
+     * If the user dosen't exist return not_found
+     * @param id
+     * @return
+     */
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -57,6 +63,15 @@ public class UserRest
     }
 
 
+    /**
+     * POST methode to add a new user to the system
+     * The id field will be ignored.
+     * If one if the userName, password, firstName, lastName is empty return a bad_request
+     * If user already exist return bad_request
+     * If successfull return the url of the new user
+     * @param user
+     * @return
+     */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Response addUser(UserPasswordDTO user)
@@ -84,11 +99,20 @@ public class UserRest
 
             }
         }
-
-
-
     }
 
+    /**
+     * Methode post with the id of the user to edit
+     * Will edit only the field given: firstName, lastName, password.
+     * The id and username are NOT EDITABLE
+     * If user doesn't exist retun not_found
+     * If a userName or a id is giver, respond bad_request.
+     * If database update fail return server_error
+     * If successfull return ok 200
+     * @param id
+     * @param userPasswordDTO
+     * @return
+     */
     @POST
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -136,8 +160,15 @@ public class UserRest
     }
 
 
-
-
+    /**
+     * Methode DELETE
+     * Delete the user of the id given
+     * If user not found return not_found
+     * If dadabase delete fail return server_error
+     * If successfull return ok 200
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -145,7 +176,6 @@ public class UserRest
 
         if (userManager.getUser(id) != null)
         {
-
             if (userManager.deleteUserID(id))
             {
                 return Response.ok().build();
