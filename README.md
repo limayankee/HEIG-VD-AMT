@@ -29,6 +29,7 @@ The application offers several pages:
 - The **login** page gives the ability to log on the site. The default user is ***admin*** with the password ***adminpass***. If you access this page while already connected, you can log in with another account.
 - The **register** page gives the ability to create a new account. You will then be redirected to the login page. You can also access this page while being already connected.
 - The **admin** page shows a table containing all the users created. The interface does not allow to control the users directly.
+- The **error** page displays details about an error that occured.
 
 ### Test
 A postman script is located at the root of the application in the file *AMT.postman_collection.json*.
