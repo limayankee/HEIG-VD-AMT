@@ -32,7 +32,7 @@ The application offers several pages:
 - The **error** page displays details about an error that occured.
 
 ### Test
-A postman script is located at *test/AMT.postman_collection.json*. If you need to change the environment variables (address and port), you can edit the postman environment (with the file *AMT.postman_environment.json*).
+A postman script is located at *test/AMT.postman_collection.json*. You will also need to add the postman environment *AMT.postman_environment.json*.
 The script should be used with a fresh running image of the application (containing only the preset database). 
 Simply import the scripts and run them in Postman application.
 
