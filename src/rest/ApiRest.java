@@ -16,7 +16,9 @@ public class ApiRest extends Application {
     @Override
     public Map<String, Object> getProperties() {
         Map<String, Object> properties = new HashMap<>();
+
         properties.put("jersey.config.disable.MoxyJson", true);
+
         return properties;
     }
 

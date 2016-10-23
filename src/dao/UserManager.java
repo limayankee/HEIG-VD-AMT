@@ -117,7 +117,6 @@ public class UserManager
                 userID = resultSet.getInt("id");
             }
 
-            System.out.println(userID);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -135,8 +134,6 @@ public class UserManager
             Connection connection = dataSource.getConnection();
             PreparedStatement statement = connection.prepareStatement(
                     "INSERT INTO `users` (`userName`, `password`, `firstName`, `lastName`) VALUES (?,?,?,?);" );
-
-            System.out.println(user.getUserName());
 
             statement.setString(1, user.getUserName());
             statement.setString(2, user.getPassword());

@@ -15,6 +15,13 @@ import java.io.IOException;
 @WebServlet(name = "IndexServlet", urlPatterns = "")
 public class IndexServlet extends HttpServlet
 {
+    /**
+     * Method GET
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);

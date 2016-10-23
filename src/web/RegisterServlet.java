@@ -23,17 +23,52 @@ public class RegisterServlet extends HttpServlet
     @EJB
     private UserManager userManager;
 
+    /**
+     * Method POST
+     * If successful redirect user to login page
+     * If not redirect to error page with message
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        boolean error = false;
+        String empty = "";
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
 
+        if (userName.equals("")){
+            empty += "username empty, ";
+            error = true;
+        }
+
+        if (password.equals("")){
+            empty += "password empty, ";
+            error = true;
+        }
+
+        if (firstName.equals("")){
+            empty += "first name empty, ";
+            error = true;
+        }
+
+        if (lastName.equals("")){
+            empty += "last name empty ";
+            error = true;
+        }
+
+        if (error){
+            request.setAttribute("error", empty);
+            request.getRequestDispatcher("/WEB-INF/error.jsp").forward(request, response);
+        }
+
         if (userManager.getUserID(userName) == -1){
 
-            System.out.println(userName);
             userManager.creatUser(new User(firstName, lastName, userName, password));
             request.getRequestDispatcher("/WEB-INF/regSucces.jsp").forward(request, response);
 
@@ -43,6 +78,14 @@ public class RegisterServlet extends HttpServlet
         }
     }
 
+    /**
+     * Method GET
+     * Show the register form
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);

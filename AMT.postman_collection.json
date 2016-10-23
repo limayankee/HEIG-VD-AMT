@@ -9,8 +9,17 @@
 	"item": [
 		{
 			"name": "List all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user",
+				"url": "http://{{host}}:{{port}}/app/api/user",
 				"method": "GET",
 				"header": [
 					{
@@ -29,8 +38,17 @@
 		},
 		{
 			"name": "Create a new user id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 201\"] = responseCode.code === 201;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user",
+				"url": "http://{{host}}:{{port}}/app/api/user",
 				"method": "POST",
 				"header": [
 					{
@@ -49,8 +67,17 @@
 		},
 		{
 			"name": "List all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/2",
+				"url": "http://{{host}}:{{port}}/app/api/user/2",
 				"method": "GET",
 				"header": [
 					{
@@ -69,8 +96,17 @@
 		},
 		{
 			"name": "Get only the user with id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/2",
+				"url": "http://{{host}}:{{port}}/app/api/user/2",
 				"method": "GET",
 				"header": [
 					{
@@ -89,8 +125,17 @@
 		},
 		{
 			"name": "Edit the user with id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/2",
+				"url": "http://{{host}}:{{port}}/app/api/user/2",
 				"method": "POST",
 				"header": [
 					{
@@ -109,8 +154,17 @@
 		},
 		{
 			"name": "Get the user with id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/2",
+				"url": "http://{{host}}:{{port}}/app/api/user/2",
 				"method": "GET",
 				"header": [
 					{
@@ -129,8 +183,17 @@
 		},
 		{
 			"name": "Delete the user with id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/2",
+				"url": "http://{{host}}:{{port}}/app/api/user/2",
 				"method": "DELETE",
 				"header": [
 					{
@@ -149,8 +212,17 @@
 		},
 		{
 			"name": "List all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/app/api/user/",
+				"url": "http://{{host}}:{{port}}/app/api/user/",
 				"method": "GET",
 				"header": [
 					{

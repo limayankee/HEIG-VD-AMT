@@ -24,21 +24,30 @@ public class LoginServlet extends HttpServlet
     private UserManager userManager;
 
 
+    /**
+     * Method GET
+     * Show the login page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Object userSession = request.getSession().getAttribute("userSession");
-
-
-        if ( userSession != null ) {
-            response.sendRedirect("admin/user");
-        } else {
-            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
+    /**
+     * Method POST
+     * If login successful, redirect to users list page
+     * If not Error page with message
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        System.out.println(userManager.checkUser(request.getParameter("userName"), request.getParameter("password")));
 
         if (userManager.checkUser(request.getParameter("userName"), request.getParameter("password")) ){
             request.getSession().setAttribute("userSession", userManager.getUserID(request.getParameter("user")));

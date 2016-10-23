@@ -19,10 +19,7 @@ public class UserFilter implements Filter
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException
     {
-        System.out.println("filter");
-
         Object userSession = ((HttpServletRequest) req).getSession().getAttribute("userSession");
-
 
         if ( userSession == null ) { //redirect to sit root if no userSession find
             ((HttpServletResponse) resp).sendRedirect("/app");
