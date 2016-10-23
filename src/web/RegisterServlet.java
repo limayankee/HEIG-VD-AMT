@@ -65,10 +65,8 @@ public class RegisterServlet extends HttpServlet
         if (error){
             request.setAttribute("error", empty);
             request.getRequestDispatcher("/WEB-INF/error.jsp").forward(request, response);
-        }
 
-        if (userManager.getUserID(userName) == -1){
-
+        } else if (userManager.getUserID(userName) == -1){
             userManager.creatUser(new User(firstName, lastName, userName, password));
             request.getRequestDispatcher("/WEB-INF/regSucces.jsp").forward(request, response);
 
