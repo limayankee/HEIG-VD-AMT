@@ -33,7 +33,7 @@ The application offers several pages:
 
 ### Test
 A postman script is located at the root of the application in the file *AMT.postman_collection.json*.
-The script should be used with a fresh running image of the application (containing only one entry in the user database). 
+The script should be used with a fresh running image of the application (containing only the preset database). 
 Simply import the script and run it in Postman application.
 
 ### List of used ports
