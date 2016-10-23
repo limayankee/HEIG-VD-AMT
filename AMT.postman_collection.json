@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AMT",
+		"_postman_id": "e4e1f48d-50c8-a054-dd54-abc1e5e3c26d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List all users",
+			"request": {
+				"url": "http://localhost:8080/app/api/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 3}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new user id 2",
+			"request": {
+				"url": "http://localhost:8080/app/api/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"userName\": \"test\",\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"password\": \"test\"\n  }"
+				},
+				"description": "create a new user with\nusername test\npassword test\nfirstName test\nlastName test"
+			},
+			"response": []
+		},
+		{
+			"name": "List all users",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"userName\": \"test\",\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"password\": \"test\"\n  }"
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get only the user with id 2",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"userName\": \"test\",\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"password\": \"test\"\n  }"
+				},
+				"description": "Get the user with id 2"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit the user with id 2",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/2",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"firstName\": \"new first name\",\n    \"lastName\": \"new last name\",\n    \"password\": \"newpass\"\n  }"
+				},
+				"description": "Edit the user 2\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get the user with id 2",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"userName\": \"test\",\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"password\": \"test\"\n  }"
+				},
+				"description": "Get the edited user"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the user with id 2",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete the user with id 2\n"
+			},
+			"response": []
+		},
+		{
+			"name": "List all users",
+			"request": {
+				"url": "http://localhost:8080/app/api/user/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"userName\": \"test\",\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"password\": \"test\"\n  }"
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		}
+	]
+}
