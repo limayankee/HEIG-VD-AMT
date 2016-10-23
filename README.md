@@ -21,6 +21,11 @@ To build and run the application, simply use the following commands in terminal 
 
 This should run three docker images called *topologyamt_mysql_1*, *topologyamt_phpmyadmin_1* and *topologyamt_wildfly_1* running the different services needed for the application.
 
+### Test
+A postman script is located at the root of the application in the file *AMT.postman_collection.json*.
+The script should be used with a fresh running image of the application (containing only one entry in the user database). 
+Simply import the script and run it in Postman application.
+
 ### List of used ports
 
 - 9090 Wildfly
