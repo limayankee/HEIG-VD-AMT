@@ -21,6 +21,15 @@ To build and run the application, simply use the following commands in terminal 
 
 This should run three docker images called *topologyamt_mysql_1*, *topologyamt_phpmyadmin_1* and *topologyamt_wildfly_1* running the different services needed for the application.
 
+You can the test the application by accessing [http://localhost:9090/app/](http://localhost:9090/app/).
+
+### Usage
+The application offers several pages:
+- The **index** of the application is a landing page offering two options: login and register.
+- The **login** page gives the ability to log on the site. The default user is ***admin*** with the password ***adminpass***. If you access this page while already connected, you can log in with another account.
+- The **register** page gives the ability to create a new account. You will then be redirected to the login page. You can also access this page while being already connected.
+- The **admin** page shows a table containing all the users created. The interface does not allow to control the users directly.
+
 ### Test
 A postman script is located at the root of the application in the file *AMT.postman_collection.json*.
 The script should be used with a fresh running image of the application (containing only one entry in the user database). 
